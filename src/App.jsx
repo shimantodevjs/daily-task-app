@@ -5,21 +5,28 @@ import TaskBox from './assets/taskBox'
 
 function App() {
   const [tasks,setTasks] = useState(textData)
+
+  function toggleBoxColor(id){
+    setTasks(prevTask=>{
+      return prevTask.map(task=>{
+        return task.id===id?{...task,on:!task.on} : task
+      })
+    })
+  }
   
   const taskComponent= tasks.map(task=>{
 
     return(
       <div className="task__components">
-      <div className="task__text">
       <TaskText
       key={task.id}
       text={task.text}
       />
-      </div>
-      <div className="task__box">
-      <TaskBox 
+      <TaskBox
+      on={task.on}
+      key={task.id}
+      handleClick={()=>toggleBoxColor(task.id)} 
       />
-      </div>
       </div>
     )
   })

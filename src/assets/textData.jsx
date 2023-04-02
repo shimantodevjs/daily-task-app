@@ -2,7 +2,7 @@ export default[
     {
         id:1,
         text:"Take cold shower",
-        on:true
+        on:false
     },
     {
         id:2,
@@ -17,7 +17,7 @@ export default[
      {
         id:4,
         text:"build self-awareness",
-        on:true
+        on:false
     },
      {
         id:5,
